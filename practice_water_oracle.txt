@@ -1,0 +1,6 @@
+select g.ENTITY_NAME_UPR,a.bseg_id, b.ft_id,a.CALC_AMT as TCEQ,c.gl_acct,
+from ci_bseg_calc_ln a, ci_ft b, ci_ft_gl c, ci_bseg d, ci_sa e
+where a.CALC_RULE_CD in ('SEWER TCEQ FEE','WT TCEQ FEE')
+and a.bseg_id = b.SIBLING_ID
+and b.ft_id = c.ft_id
+and a.dst_id = c.DST_ID
