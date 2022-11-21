@@ -22,17 +22,20 @@ k = str(new)
 
 num_select = k.find('select')
 num_from = k.find('from')
-num_track = num_from
+num_tracker = num_from
 num_where = k.find('where')
 print(f'Select:{num_select} From:{num_from} Where:{num_where}')
 #find comma's between from and where 
 comma = []
-if num_track < num_where:
-     comma.append(k.find(',', num_track))
-     print(f'Comma List:{comma}')
-     num_track = k.find(',', num_track)
-else:     
-     print("error")
+print(num_tracker) #79
 
-print(num_track)
+while num_tracker < num_where:
+    comma.append(k.find(',', num_tracker))
+    print(f'Comma List:{comma}')
+    num_tracker = k.find(',', num_tracker)
+    num_tracker += 1
+
+print(k[90:187])
+
+print("ye")
 # strip() 
