@@ -29,12 +29,14 @@ comma = []
 print(num_tracker) #79
 
 while num_tracker < num_where:
-    comma.append(k.find(',', num_tracker))
-    print(f'Comma List:{comma}')
     num_tracker = k.find(',', num_tracker)
+    comma.append(num_tracker)
+    print(f'Comma List:{comma}')
     num_tracker += 1
-    
-print(k[90:187])
+    if (k.find(',', num_tracker)) > num_where:
+        break
+
+print(k[79:187])
 
 print("ye")
 # strip() 
