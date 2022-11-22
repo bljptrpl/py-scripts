@@ -17,7 +17,6 @@ file.close
 
 #convert list into string
 k = str(new)
-
 #find "from" in list
 
 num_select = k.find('select')
@@ -34,7 +33,7 @@ while num_tracker < num_where:
     print(f'Comma List:{comma}')
     num_tracker = k.find(',', num_tracker)
     num_tracker += 1
-
+    
 print(k[90:187])
 
 print("ye")
