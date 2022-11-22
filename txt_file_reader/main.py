@@ -28,13 +28,13 @@ print(f'Select:{num_select} From:{num_from} Where:{num_where}')
 comma = []
 print(num_tracker) #79
 
-while num_tracker < num_where:
+while (k.find(',', num_tracker)) < num_where:
     num_tracker = k.find(',', num_tracker)
     comma.append(num_tracker)
     print(f'Comma List:{comma}')
     num_tracker += 1
-    if (k.find(',', num_tracker)) > num_where:
-        break
+    # if (k.find(',', num_tracker)) > num_where:
+    #     break
 
 print(k[79:187])
 
