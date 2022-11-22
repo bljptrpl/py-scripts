@@ -1,25 +1,27 @@
-#file reader
+# Daniel Villalva
+# Objective: Read file and create strings
+# Encoding, Current version, Imports, Date of creation, Complete update history
+
+############# file reader #############
 file = open('C:\\Users\\dvillalva\Desktop\\scripts\\practice_water_oracle.txt', 'r')
-
 rl = file.readlines()
-
 new = []
-
 for line in rl: 
     new.append(line.strip())
-
 file.close
 
-#convert list into string
+############# convert list into string #############
 k = str(new)
-#find "from" in list
+############# find "from" in list #############
 
 num_select = k.find('select')
 num_from = k.find('from')
 num_tracker = num_from
 num_where = k.find('where')
 #print(f'Select:{num_select} From:{num_from} Where:{num_where}')
-#find space between from and where 
+
+
+############# find space between from and where #############
 spaces = []
 while (k.find(' ', num_tracker)) < num_where:
     num_tracker = k.find(' ', num_tracker)
@@ -27,13 +29,13 @@ while (k.find(' ', num_tracker)) < num_where:
     #print(f'Spaces List:{spaces}')
     num_tracker += 1
 
-#Store the strings between spaces
+############# Store the strings between spaces #############
 i = 0
 p = 1
 keyu = []
 for i in range(len(spaces)-1):
     keyu.append(k[spaces[i]:spaces[p]])
+    # Trim string 
+    print(keyu[i].replace(',',''))
     p += 1
-    print(keyu[i])
 
-# strip()
