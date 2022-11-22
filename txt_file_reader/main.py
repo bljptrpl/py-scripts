@@ -36,6 +36,8 @@ keyu = []
 for i in range(len(spaces)-1):
     keyu.append(k[spaces[i]:spaces[p]])
     # Trim string 
-    print(keyu[i].replace(',',''))
+    keyu[i] = keyu[i].replace(',','')
+    keyu[i] = keyu[i].replace('\'','')
+    print(keyu[i])
     p += 1
 
