@@ -29,7 +29,7 @@ while (k.find(' ', num_tracker)) < num_where:
     #print(f'Spaces List:{spaces}')
     num_tracker += 1
 
-############# Store the strings between spaces #############
+############# Store the strings between spaces FROM #############
 i = 0
 p = 1
 keyu = []
@@ -40,4 +40,8 @@ for i in range(len(spaces)-1):
     keyu[i] = keyu[i].replace('\'','')
     print(keyu[i])
     p += 1
+
+############# Store the strings between spaces Selection #############
+
+############# Diction #############
 

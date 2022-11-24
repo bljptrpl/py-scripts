@@ -1,0 +1,27 @@
+SELECT 
+    CI_CC.PREM_ID               "Premise", 
+    CI_CC.ACCT_ID               "Customer Account #", 
+    CI_PREM.ADDRESS1            "Premise Address",
+    --CI_PREM.CITY,
+    --CI_PREM.POSTAL,
+    --CI_PREM.COUNTRY,
+    CI_PER_ADDR_OVRD.ADDRESS1   "Override Mailing Address",
+    --CI_PER_ADDR_OVRD.CITY,
+    --CI_PER_ADDR_OVRD.POSTAL,
+    --CI_PER_ADDR_OVRD.COUNTRY
+FROM CI_CC
+INNER JOIN CI_PREM ON CI_PREM.PREM_ID = CI_CC.PREM_ID
+INNER JOIN CI_PER_ADDR_OVRD ON CI_PER_ADDR_OVRD.ACCT_ID = CI_CC.ACCT_ID
+;
+--CI_PER_ADDR_OVRD      --ACCT_ID                               Override (Mailing) Address
+--CI_CC                 --PREM_ID
+--CI_PREM
+
+--LINKS
+--CI_CC.PREM_ID <-> CI_PREM.PREM_ID
+--CI_CC.ACCT_ID <-> CI_PER_ADDR_OVRD.ACCT_ID
+--Columns
+--CI_CC.PREM_ID
+--CI_CC.ACCT_ID
+--CI_PREM.ADDRESS1/CITY/POSTAL/COUNTRY
+--CI_PER_ADDR_OVRD.ADDRESS1/CITY/POSTAL/ST/COUNTRY
