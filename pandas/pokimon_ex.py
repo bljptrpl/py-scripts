@@ -5,6 +5,8 @@ df = pd.read_csv('C:\\Users\\dvillalva\\Desktop\\scripts\pandas\\pokemon_data.cs
 #print(df.head(3))
 df.to_csv('C:\\Users\\dvillalva\\Desktop\\scripts\pandas\\modified.csv', sep='\t')
 # df.to_excel('modified.xlsx', index=False)
-print('test')
+# print('test')
 
-df.loc[df['Type 1'] == 'Flamer', 'Type 1'] = 'Fire'
+df['Total'] = df.iloc[:,4:10].sum(axis=1)
+
+print(df.head(5))
