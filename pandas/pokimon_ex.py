@@ -9,4 +9,12 @@ df.to_csv('C:\\Users\\dvillalva\\Desktop\\scripts\pandas\\modified.csv', sep='\t
 
 df['Total'] = df.iloc[:,4:10].sum(axis=1)
 
-print(df.head(5))
+#print(df.head(5))
+
+df.to_csv('C:\\Users\\dvillalva\\Desktop\\scripts\pandas\\modified.txt', index=False, sep='\t')
+# df = pd.DataFrame(df)
+# new_df = df.loc[(df['Type 1'] == 'Grass') | (df['Type 2'] == 'Poison')]
+
+new_df = df.loc[~df['Name'].str.contains('Mega')]
+
+print (new_df)
