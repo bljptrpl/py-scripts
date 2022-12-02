@@ -15,6 +15,9 @@ df.to_csv('C:\\Users\\dvillalva\\Desktop\\scripts\pandas\\modified.txt', index=F
 # df = pd.DataFrame(df)
 # new_df = df.loc[(df['Type 1'] == 'Grass') | (df['Type 2'] == 'Poison')]
 
+# Regex filtering
 new_df = df.loc[~df['Name'].str.contains('Mega')]
-
+import re 
+k = df.loc[df['Name'].str.contains('pi[a-z]*', flags=re.I,regex=True)]  
 print (new_df)
+print(k)    

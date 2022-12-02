@@ -1,5 +1,10 @@
 # create a dictionary library
+# process: scan if created excel file is there
+#           if so -> read and load table
+#           if not -> create it
 import pandas as pd
+import numpy as np
+
 dict = [{ 'C1_CALC_GRP_L' : ['CALC_GRP_CD','CalculationGroupLanguageInfo', 'CalculationGroupCd']},
 { 'C1_CALC_GRP_L' : ['DESCR100','CalculationGroupLanguageInfo', 'Description100']},
 { 'C1_CALC_GRP_L' : ['DESCRLONG','CalculationGroupLanguageInfo', 'DetailedDescription']},
@@ -59,8 +64,11 @@ d3 = {
     'REF_CALC_GRP_CD': ['CalculationRuleInfo', 'RefCalculationGroupCd']}
 }
 
+print(pd.DataFrame(d3))
+
 
 for i in range(8):
     #print(d['CI_CALC_RULE'])
     #print(d2['C1_CALC_GRP_L'])
     print(d3['C1_CALC_GRP_L']['DESCR100'])
+
